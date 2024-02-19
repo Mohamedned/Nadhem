@@ -12,6 +12,7 @@ function GoalInput(props) {
         props.onAddGoal(enteredGoalText);
         setEnteredGoalText('');
     }
+
     return (
         <View style={styles.inputContainer}>
             <TextInput
@@ -36,12 +37,12 @@ const styles = StyleSheet.create({
         marginBottom: 24,
         borderBottomWidth: 1,
         borderBottomColor: '#cccccc'
-      },
-      textInput: {
+    },
+    textInput: {
         borderWidth: 1, 
         borderColor: '#cccccc', 
         width: '70%',
         marginRight: 8,
         padding: 8
-      },
+    },
 });
