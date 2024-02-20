@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { View, TextInput, Button, StyleSheet, Modal } from "react-native";
+import { View, TextInput, Button, StyleSheet, Modal, Image } from "react-native";
 
 function GoalInput(props) {
     const [enteredGoalText, setEnteredGoalText] = useState('');
@@ -16,6 +16,7 @@ function GoalInput(props) {
     return (
         <Modal visible={props.visible} animationType="slide">
             <View style={styles.inputContainer}>
+                <Image style={styles.image} source={require('../assets/images/goal.png')}/>
                 <TextInput
                     style={styles.textInput} 
                     placeholder='Jouw course doel!' 
@@ -24,10 +25,10 @@ function GoalInput(props) {
                 />
                 <View style={styles.buttonContainer}>
                     <View style={styles.button}>
-                        <Button title='Voeg Toe' onPress={addGoalHandler}/>
+                        <Button title='Annuleer' color='#B95436' onPress={props.onCancel}/>
                     </View>
                     <View style={styles.button}>
-                        <Button title='Annuleer' color='red' onPress={props.onCancel}/>
+                        <Button title='Voeg Toe' onPress={addGoalHandler} color={'#575743'}/>
                     </View>
                 </View>
             </View>
@@ -44,15 +45,21 @@ const styles = StyleSheet.create({
         justifyContent: 'center', 
         alignItems: 'center',
         padding: 16,
-        marginBottom: 24,
-        borderBottomWidth: 1,
-        borderBottomColor: '#cccccc'
+        backgroundColor: '#A5A56D'
+    },
+    image: {
+        width: 100,
+        height: 100,
+        marginBottom: 20
     },
     textInput: {
         borderWidth: 1, 
-        borderColor: '#cccccc', 
+        borderColor: '#D3D3A4',
+        backgroundColor: '#D3D3A4', 
+        color: '#120438',
+        borderRadius: 6,
         width: '100%',
-        padding: 8
+        padding: 10
     },
     buttonContainer: {
         marginTop: 16,
