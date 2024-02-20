@@ -35,7 +35,7 @@ export default function App() {
     <>
       <StatusBar style="auto" />  
       <View style={styles.container}>
-        <Button title='Add New Goal' color="#4E4E3E" onPress={startAddGoalHandler}/>
+        <Button title='Voeg Een Nieuw Doel Toe' color="#4E4E3E" onPress={startAddGoalHandler}/>
         <GoalInput visible={modelIsVisible} onAddGoal={addGoalHandler} onCancel={endAddGoalHandler} />
         <View style={styles.goelsContainer} >
           <FlatList 
